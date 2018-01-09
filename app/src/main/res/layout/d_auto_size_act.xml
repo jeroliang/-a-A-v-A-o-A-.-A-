@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@drawable/lineaar_divider"
+        android:orientation="vertical"
+        android:showDividers="middle">
+
+        <demo.jero.alone.stretchtextview
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="stretchtextview:使得法国红酒斯蒂芬三江口上方的多么深刻理解上的快乐杰弗森杰弗森大家反倒是寂寞开发商的局面"
+            android:textSize="30sp" />
+
+        <demo.jero.alone.stretchtextview
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:maxLines="1"
+            android:text="stretchtextview:使得法国红酒斯蒂芬三江口上方的多么深刻理解上的快乐杰弗森杰弗森大家反倒是寂寞开发商的局面"
+            android:textSize="30sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:autoSizeMaxTextSize="20dp"
+            android:autoSizeMinTextSize="12dp"
+            android:autoSizeStepGranularity="2sp"
+            android:autoSizeTextType="uniform"
+            android:text="autoSize:使得法国红酒斯蒂芬三江口上方的多么深刻理解上的快乐杰弗森杰弗森大家反倒是寂寞开发商的局面"
+            android:textSize="30sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autoSizeMaxTextSize="20dp"
+            android:autoSizeMinTextSize="12dp"
+            android:autoSizeStepGranularity="2sp"
+            android:autoSizeTextType="uniform"
+            android:maxLines="1"
+            android:text="autoSize:使得法国红酒斯蒂芬三江口上方的多么深刻理解上的快乐杰弗森杰弗森大家反倒是寂寞开发商的局面"
+            android:textSize="30sp" />
+
+        <EditText
+            android:id="@+id/et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_1"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:autoSizeMaxTextSize="20dp"
+            android:autoSizeMinTextSize="12dp"
+            android:autoSizeTextType="uniform"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/tv_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/et_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/et_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</ScrollView>

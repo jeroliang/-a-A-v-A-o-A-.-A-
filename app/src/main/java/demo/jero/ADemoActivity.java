@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
+import demo.jero.alone.DAutoSizeAct;
 import demo.jero.alone.DStaticLayout;
 
 /**
@@ -32,6 +33,9 @@ public class ADemoActivity extends ListActivity {
                         startActivity(new Intent(ADemoActivity.this, DStaticLayout.class));
                         break;
                     case 1:
+                        startActivity(new Intent(ADemoActivity.this, DAutoSizeAct.class));
+                        break;
+                    default:
                         break;
                 }
             }
@@ -41,6 +45,7 @@ public class ADemoActivity extends ListActivity {
     private List<String> initData() {
         List<String> list = new ArrayList<>();
         list.add(" /// StaticLayout");
+        list.add(" /// AutoSizeText");
 
         return list;
     }

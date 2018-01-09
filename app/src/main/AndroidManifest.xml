@@ -21,6 +21,7 @@
         </activity>
         <activity android:name=".ADemoActivity" />
         <activity android:name=".alone.DStaticLayout" />
+        <activity android:name=".alone.DAutoSizeAct" />
     </application>
 
 </manifest>
