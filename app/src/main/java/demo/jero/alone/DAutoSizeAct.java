@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.TextViewCompat;
+import android.support.v7.widget.AppCompatTextView;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.TypedValue;
@@ -21,12 +22,12 @@ import demo.jero.R;
 
 public class DAutoSizeAct extends Activity {
     private Button btn1, btn2;
-    private TextView tv1, tv2;
+    private AppCompatTextView tv1, tv2;
     private EditText et, et1, et2;
 
 
     private Button jia, jian;
-    private TextView vvv;
+    private AppCompatTextView vvv;
     private LinearLayout.LayoutParams vvvParams;
 
     @Override
