@@ -53,34 +53,74 @@
             android:id="@+id/tv_1"
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:autoSizeMaxTextSize="20dp"
-            android:autoSizeMinTextSize="12dp"
+            android:autoSizeMaxTextSize="30dp"
+            android:autoSizeMinTextSize="6dp"
             android:autoSizeTextType="uniform"
             android:textSize="30sp" />
 
         <TextView
             android:id="@+id/tv_2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="30dp" />
 
         <EditText
             android:id="@+id/et_1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="30dp"
+            android:autoSizeMaxTextSize="30dp"
+            android:autoSizeMinTextSize="6dp"
+            android:autoSizeTextType="uniform"
+            android:background="@null" />
 
         <EditText
             android:id="@+id/et_2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="30dp"
+            android:background="@null" />
 
         <Button
             android:id="@+id/btn_1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="30dp"
+            android:autoSizeMaxTextSize="30dp"
+            android:autoSizeMinTextSize="6dp"
+            android:autoSizeTextType="uniform"
+            android:background="@null" />
 
         <Button
             android:id="@+id/btn_2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="30dp"
+            android:background="@null" />
+
+        <Button
+            android:id="@+id/jia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="增加" />
+
+        <Button
+            android:id="@+id/jian"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="减少" />
+
+        <TextView
+            android:id="@+id/vvv"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@color/colorPrimary" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="30dp"
+            android:textSize="30dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6dp"
+            android:textSize="6dp" />
     </LinearLayout>
 </ScrollView>
