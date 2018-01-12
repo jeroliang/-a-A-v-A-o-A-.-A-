@@ -22,6 +22,11 @@
         <activity android:name=".ADemoActivity" />
         <activity android:name=".alone.DStaticLayout" />
         <activity android:name=".alone.DAutoSizeAct" />
+        <activity android:name=".LayDemoActivity" />
+        <activity
+            android:name=".layout.CoordinatorLayActivity"
+            android:label="@string/title_activity_coordinator_lay"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
