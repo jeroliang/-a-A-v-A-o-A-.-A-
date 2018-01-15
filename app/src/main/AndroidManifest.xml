@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="demo.jero">
 
+    <!-- To access Google+ APIs: -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,8 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <!-- orientation 旋转  screenSize 屏幕范围大小（虚拟键）keyboardHidden 键盘把~~  反正猜一猜~~~差不多-->
         <activity
             android:name=".MainActivity"
+            android:configChanges="orientation|screenSize"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -19,14 +25,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ADemoActivity" />
-        <activity android:name=".alone.DStaticLayout" />
-        <activity android:name=".alone.DAutoSizeAct" />
+        <activity
+            android:name=".ADemoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".alone.DStaticLayout"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".alone.DAutoSizeAct"
+            android:screenOrientation="portrait" />
         <activity android:name=".LayDemoActivity" />
         <activity
             android:name=".layout.CoordinatorLayActivity"
             android:label="@string/title_activity_coordinator_lay"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".layout.FActivity"
+            android:configChanges="orientation|screenSize" />
     </application>
 
 </manifest>

@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import demo.jero.layout.CoordinatorLayActivity;
+import demo.jero.layout.FActivity;
 
 /**
  * Created by Jero on 2017/12/19 0019.
@@ -29,9 +30,10 @@ public class LayDemoActivity extends ListActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 switch (position) {
                     case 0:
-                        startActivity(new Intent(LayDemoActivity.this, CoordinatorLayActivity.class));
+                        startActivity(new Intent(LayDemoActivity.this, FActivity.class));
                         break;
                     case 1:
+                        startActivity(new Intent(LayDemoActivity.this, CoordinatorLayActivity.class));
                         break;
                     default:
                         break;
@@ -42,6 +44,7 @@ public class LayDemoActivity extends ListActivity {
 
     private List<String> initData() {
         List<String> list = new ArrayList<>();
+        list.add(" /// FDemo");
         list.add(" /// CoordinatorLayAll");
 
         return list;

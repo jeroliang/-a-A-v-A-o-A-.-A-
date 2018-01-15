@@ -1,6 +1,7 @@
 package demo.jero;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -98,5 +99,15 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            //横向
+        } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
+            //竖向
+        }
+        super.onConfigurationChanged(newConfig);
     }
 }
