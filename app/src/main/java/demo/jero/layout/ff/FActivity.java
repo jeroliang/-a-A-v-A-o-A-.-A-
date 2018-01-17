@@ -36,28 +36,28 @@ public class FActivity extends AppCompatActivity {
         ten = new FTenFragment();
         six = new FSixFragment();
 
-        transaction.add(R.id.aa, ten);
-        transaction.add(R.id.cc, new FTenFragment());
+//        transaction.add(R.id.aa, ten);
+//        transaction.add(R.id.cc, getFragmentByTag(1));
         transaction.commit();
 
         one = new FOneFragment();
 
         transaction = getFragmentManager().beginTransaction();
-        transaction.remove(ten);
+//        transaction.remove(ten);
+        showFragment(transaction, 1);
         transaction.commit();
 //        transaction.add(R.id.aa, one, "aa");
     }
 
-    private Fragment getFragmentByTag(int tag) {
-        Fragment fragment = null;
-        FragmentManager manager = getFragmentManager();
-        if (tag > 2)
-            fragment = manager.findFragmentByTag("" + tag);
-        else if (tag == 1)
-            fragment = manager.findFragmentById(R.id.ee);
-        else if (tag == 2)
-            fragment = manager.findFragmentById(R.id.bb);
+    private void showFragment(FragmentTransaction transaction, int tag) {
+        if (getFragmentByTag(tag).isHidden())
+            transaction.hide(getFragmentByTag(tag));
+        transaction.show(getFragmentByTag(tag));
+    }
 
+    private Fragment getFragmentByTag(int tag) {
+        FragmentManager manager = getFragmentManager();
+        Fragment fragment = manager.findFragmentByTag("" + tag);
         if (null == fragment) {
             fragment = newFragment(tag);
             manager.beginTransaction().add(fragment, "" + tag);
