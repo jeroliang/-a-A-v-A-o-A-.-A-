@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import demo.jero.layout.CoordinatorLayActivity;
-import demo.jero.layout.FActivity;
+import demo.jero.layout.ff.FActivity;
 
 /**
  * Created by Jero on 2017/12/19 0019.

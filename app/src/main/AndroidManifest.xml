@@ -39,9 +39,8 @@
             android:name=".layout.CoordinatorLayActivity"
             android:label="@string/title_activity_coordinator_lay"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".layout.FActivity"
-            android:configChanges="orientation|screenSize" />
+        <!-- android:configChanges="orientation|screenSize"(设置以后可以在回调里面动态变更)  如果设置以后 layout 里面land 不生效 -->
+        <activity android:name=".layout.ff.FActivity" />
     </application>
 
 </manifest>

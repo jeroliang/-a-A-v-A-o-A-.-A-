@@ -14,7 +14,7 @@ import android.view.ViewGroup;
  */
 
 public class BaseFragment extends Fragment {
-    private final String TAG = getClass().getSimpleName();
+    public final String TAG = getClass().getSimpleName();
 
     @Override
     public void onAttach(Context context) {
