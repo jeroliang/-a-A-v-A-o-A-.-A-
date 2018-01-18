@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import demo.jero.R;
-import demo.jero.layout.BaseFragment;
 
 /**
  * Created by Jero on 2018/1/15 0015.

@@ -36,17 +36,51 @@ public class FActivity extends AppCompatActivity {
         ten = new FTenFragment();
         six = new FSixFragment();
 
+        // 正常显示  add就显示
 //        transaction.add(R.id.aa, ten);
-//        transaction.add(R.id.cc, getFragmentByTag(1));
-        transaction.commit();
+//        transaction.add(R.id.cc, six);
+//        transaction.commit();
 
-        one = new FOneFragment();
-
-        transaction = getFragmentManager().beginTransaction();
+        // remove 回销毁
+//        transaction.add(R.id.aa, six);
+//        transaction.add(R.id.aa, ten);
 //        transaction.remove(ten);
-        showFragment(transaction, 1);
-        transaction.commit();
-//        transaction.add(R.id.aa, one, "aa");
+//        transaction.commit();
+
+        // replace 等于 remove + add  就是替换了  旧的会销毁
+//        transaction.add(R.id.aa, six);
+//        transaction.replace(R.id.aa, ten);
+//        transaction.commit();
+
+        //<editor-fold desc="隐藏  显示 ">
+        // 如果在on create 方法里面发现不需要显示某个fragment  会不走create view 方法  所以不显示
+        // hide 并不会隐藏  只是到了最下层
+//        transaction.add(R.id.aa, new FSevenFragment());
+//        transaction.add(R.id.aa, ten);
+//        transaction.add(R.id.aa, six);
+//        transaction.hide(six);
+//        transaction.commit();
+
+        // 显示  跟hide 成对
+//        transaction = getFragmentManager().beginTransaction();
+////        transaction.show(six);
+//        transaction.remove(ten);
+//        transaction.commit();
+        //</editor-fold>
+
+
+        //<editor-fold desc="拆分（解绑） 附上（绑定<如果销毁会新建，但是没有绑定的目标，所以只新建>）">
+        // detach 是 拆分效果就是隐藏了  不会销毁
+//        transaction.add(R.id.aa, six);
+//        transaction.add(R.id.aa, ten);
+//        transaction.detach(ten);
+//        transaction.commit();
+
+        // attach 可以跟detach 使用
+//        transaction = getFragmentManager().beginTransaction();
+//        transaction.attach(ten);
+//        transaction.commit();
+        //</editor-fold>
     }
 
     private void showFragment(FragmentTransaction transaction, int tag) {
