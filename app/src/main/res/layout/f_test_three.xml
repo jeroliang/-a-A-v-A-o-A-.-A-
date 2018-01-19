@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:fitsSystemWindows="true">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:minHeight="48dp"
+            app:collapsedTitleTextAppearance="@style/ToolBarTitleText"
+            app:contentScrim="#ccc"
+            app:expandedTitleMarginEnd="48dp"
+            app:expandedTitleMarginStart="48dp"
+            app:expandedTitleTextAppearance="@style/transparentText"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <LinearLayout
+                android:id="@+id/login_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#cccc"
+                android:orientation="vertical"
+                android:paddingBottom="10dp"
+                app:layout_collapseParallaxMultiplier="0.7">
+
+                <ImageView
+                    android:id="@+id/head_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/ic_launcher" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:background="#845" />
+
+                <TextView
+                    android:id="@+id/sign"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLength="70"
+                    android:maxLines="2"
+                    android:text="喵了个咪喵了个咪"
+                    android:textColor="#ffffff"
+                    android:textSize="14sp"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                app:layout_collapseMode="pin">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="返回" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="搜索" />
+
+                <ImageView
+                    android:layout_width="34dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="14dp"
+                    android:src="#cad" />
+            </LinearLayout>
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/toolbar_tab"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginRight="48dp"
+                android:background="#ffffff"
+                android:fillViewport="false"
+                app:layout_scrollFlags="scroll"
+                app:tabContentStart="50dp"
+                app:tabIndicatorColor="#0835f8"
+                app:tabIndicatorHeight="2.0dp"
+                app:tabMode="scrollable"
+                app:tabSelectedTextColor="#0835f8"
+                app:tabTextColor="#ced0d3" />
+
+            <ImageView
+                android:layout_width="34dp"
+                android:layout_height="48dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="14dp"
+                android:src="#cad" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_alignParentBottom="true"
+                android:background="#bbb" />
+        </RelativeLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:text="@string/large_text" />
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>
