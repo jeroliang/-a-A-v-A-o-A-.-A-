@@ -12,6 +12,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,6 +23,35 @@ import demo.jero.R;
 public class CoordinatorLayActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     int oldSelect = 0;
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.i("ccc", "onSaveInstanceState: ");
+        outState.putInt("tag", oldSelect);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        oldSelect = savedInstanceState.getInt("tag");
+        Log.i("ccc", "onRestoreInstanceState: " + oldSelect);
+        restoreFragment();
+    }
+
+    @Override
+    public void onAttachFragment(Fragment fragment) {
+        super.onAttachFragment(fragment);
+        //添加时候调用
+        Log.i("ccc", "onAttachFragment: ");
+    }
+
+    @Override
+    public void onAttachFragment(android.support.v4.app.Fragment fragment) {
+        super.onAttachFragment(fragment);
+        //v4 添加时候调用
+        Log.i("ccc", "onAttachFragment: v4");
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +78,16 @@ public class CoordinatorLayActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        checkFragment(3);
+        if (savedInstanceState == null) {
+            checkFragment(3);
+        }
+    }
+
+    private void restoreFragment() {
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.hide(getFragmentManager().findFragmentByTag("" + oldSelect));
+        transaction.show(getFragmentManager().findFragmentByTag("" + oldSelect));
+        transaction.commit();
     }
 
     private void checkFragment(int tag) {

@@ -50,6 +50,7 @@
             android:name=".layout.coordinator.ShopDemoAct"
             android:theme="@style/AppTheme.fall" />
         <activity android:name=".layout.coordinator.HomeDemoAct" />
+        <activity android:name=".alone.SaveActivity" />
     </application>
 
 </manifest>

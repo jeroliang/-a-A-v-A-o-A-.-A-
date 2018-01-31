@@ -13,6 +13,7 @@ import java.util.List;
 
 import demo.jero.alone.DAutoSizeAct;
 import demo.jero.alone.DStaticLayout;
+import demo.jero.alone.SaveActivity;
 
 /**
  * Created by Jero on 2017/12/19 0019.
@@ -35,6 +36,9 @@ public class ADemoActivity extends ListActivity {
                     case 1:
                         startActivity(new Intent(ADemoActivity.this, DAutoSizeAct.class));
                         break;
+                    case 2:
+                        startActivity(new Intent(ADemoActivity.this, SaveActivity.class));
+                        break;
                     default:
                         break;
                 }
@@ -46,6 +50,7 @@ public class ADemoActivity extends ListActivity {
         List<String> list = new ArrayList<>();
         list.add(" /// StaticLayout");
         list.add(" /// AutoSizeText");
+        list.add(" /// SaveActivity");
 
         return list;
     }
