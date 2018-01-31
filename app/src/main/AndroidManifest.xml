@@ -45,7 +45,11 @@
         <activity
             android:name=".layout.coordinator.ScrollingActivity"
             android:label="@string/title_activity_scrolling"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".layout.coordinator.ShopDemoAct"
+            android:theme="@style/AppTheme.fall" />
+        <activity android:name=".layout.coordinator.HomeDemoAct" />
     </application>
 
 </manifest>

@@ -7,8 +7,12 @@ import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.TabLayout;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import demo.jero.R;
 
@@ -20,6 +24,12 @@ public class FTestTwo extends Fragment {
     private static final String TAG = "FTestTwo";
     TabLayout tabLayout;
     AppBarLayout appBarLayout;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
 
     @Nullable
     @Override
@@ -46,5 +56,16 @@ public class FTestTwo extends Fragment {
         });
 
         return view;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.activity_coordinator_lay_drawer, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Toast.makeText(getActivity(), "FragmentONE_" + item.getItemId(), Toast.LENGTH_SHORT).show();
+        return true;
     }
 }

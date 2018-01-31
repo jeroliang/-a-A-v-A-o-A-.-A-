@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import demo.jero.layout.coordinator.CoordinatorLayActivity;
+import demo.jero.layout.coordinator.HomeDemoAct;
 import demo.jero.layout.coordinator.ScrollingActivity;
 import demo.jero.layout.coordinator.ShopDemoAct;
 import demo.jero.layout.ff.FActivity;
@@ -43,6 +44,9 @@ public class LayDemoActivity extends ListActivity {
                     case 3:
                         startActivity(new Intent(LayDemoActivity.this, ShopDemoAct.class));
                         break;
+                    case 4:
+                        startActivity(new Intent(LayDemoActivity.this, HomeDemoAct.class));
+                        break;
                     default:
                         break;
                 }
@@ -56,6 +60,7 @@ public class LayDemoActivity extends ListActivity {
         list.add(" /// CoordinatorLayAll");
         list.add(" /// ScrollingLay");
         list.add(" /// ShopHomeDemo");
+        list.add(" /// HomeDemo");
 
         return list;
     }

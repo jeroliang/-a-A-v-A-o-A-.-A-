@@ -15,6 +15,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import demo.jero.R;
 
@@ -68,6 +69,7 @@ public class CoordinatorLayActivity extends AppCompatActivity
             fragment = newFragment(tag);
             transaction.add(R.id.fragment, fragment, "" + tag);
         }
+        transaction.addToBackStack(null);//回退栈  记录本次操作  back按键（onBackPressed（）方法）执行
         return fragment;
     }
 
@@ -117,6 +119,7 @@ public class CoordinatorLayActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Toast.makeText(this, "activity_settings", Toast.LENGTH_SHORT).show();
             return true;
         }
 

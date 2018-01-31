@@ -18,8 +18,8 @@ public class ShopDemoAct extends Activity {
     AppBarLayout appBarLayout;
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.f_test_three);
         tabLayout = findViewById(R.id.toolbar_tab);
         appBarLayout = findViewById(R.id.app_bar_layout);
@@ -30,7 +30,7 @@ public class ShopDemoAct extends Activity {
         tabLayout.addTab(tabLayout.newTab().setText("asd"));
         tabLayout.addTab(tabLayout.newTab().setText("asd"));
         tabLayout.addTab(tabLayout.newTab().setText("asd"));
-        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 appBarLayout.setExpanded(false);
