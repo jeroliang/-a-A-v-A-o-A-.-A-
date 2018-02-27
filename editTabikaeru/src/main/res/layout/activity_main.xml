@@ -4,7 +4,6 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#5555c940"
     android:orientation="vertical"
     tools:context="jero.edit.tabikaeru.MainActivity">
 
@@ -15,18 +14,47 @@
         android:layout_margin="@dimen/activity_horizontal_margin"
         android:text="旅行青蛙1.0.4版本的存档文件修改" />
 
-    <FrameLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/white">
+        android:layout_margin="@dimen/activity_horizontal_margin">
 
         <android.support.v7.widget.AppCompatSpinner
             android:id="@+id/spinner"
+            android:layout_width="250dp"
+            android:layout_height="40dp" />
+
+        <Button
+            android:id="@+id/ok"
             android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_toRightOf="@id/spinner"
+            android:text="确认" />
+
+        <LinearLayout
+            android:id="@+id/edit_lay"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
-            android:layout_marginRight="@dimen/activity_vertical_margin" />
-    </FrameLayout>
+            android:layout_below="@id/spinner">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="包名:" />
+
+            <EditText
+                android:id="@+id/left"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:text="jp.co.hit_point.tabikaeru" />
+
+            <EditText
+                android:id="@+id/right"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="jero" />
+        </LinearLayout>
+    </RelativeLayout>
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
@@ -54,25 +82,28 @@
             android:hint="抽奖卷" />
     </android.support.design.widget.TextInputLayout>
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
-        android:text="确认" />
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_vertical_margin">
 
-    <Button
-        android:id="@+id/back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="备份" />
+        <Button
+            android:id="@+id/save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="保存" />
 
-    <Button
-        android:id="@+id/history"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="查看备份历史" />
+        <Button
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="备份" />
 
+        <Button
+            android:id="@+id/history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="查看备份历史" />
+    </LinearLayout>
 </LinearLayout>
