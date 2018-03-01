@@ -43,6 +43,17 @@ class MainActivity : AppCompatActivity() {
             }
             writeToFile(cloverEt.text.toString(), raffleEt.text.toString())
         })
+        back.setOnClickListener({ writeBackUp() })
+        history.setOnClickListener({ showHistory() })
+        history_del.setOnClickListener {
+            FileTools.delBackList(getPkName())
+            history.callOnClick()
+        }
+        history_list.setOnItemLongClickListener({ parent, view, position, id ->
+            Snackbar.make(container, "是否覆盖现有存档（危险操作！！！）", Snackbar.LENGTH_LONG)
+                    .setAction("覆盖", { writeBackFile(history_list.adapter.getItem(position).toString()) }).show()
+            true
+        })
         inputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
     }
 
@@ -84,6 +95,8 @@ class MainActivity : AppCompatActivity() {
         val cloverByteArray = Tools.intToByteArray(Integer.valueOf(cloverHex))
         val couponByteArray = Tools.intToByteArray(Integer.valueOf(couponHex))
         val arrayOfByte = file.readBytes()
+        val backFile = FileTools.newBackFile(getPkName())
+        backFile.writeBytes(arrayOfByte)
         if (arrayOfByte.size > 29) {
             //三叶草
             arrayOfByte[22] = cloverByteArray[0]
@@ -100,6 +113,38 @@ class MainActivity : AppCompatActivity() {
             file.writeBytes(arrayOfByte)
         }
         Snackbar.make(container, "保存完成", Snackbar.LENGTH_LONG).show()
+    }
+
+    private fun writeBackUp() {
+        val file = FileTools.getSaveFile(getPkName())
+        if (!file.exists()) {
+            Snackbar.make(container, "未找到存档文件", Snackbar.LENGTH_LONG)
+                    .setAction("重试", { save.callOnClick() }).show()
+            return
+        }
+        val backFile = FileTools.newBackFile(getPkName())
+        backFile.writeBytes(file.readBytes())
+        Snackbar.make(container, "备份完成", Snackbar.LENGTH_LONG).show()
+    }
+
+    private fun showHistory() {
+        var adapter = ArrayAdapter<String>(this, R.layout.spinner_item, FileTools.getBackList(getPkName()))
+        history_list.adapter = adapter
+    }
+
+    private fun writeBackFile(name: String) {
+        println(name)
+        val file = FileTools.getSaveFile(getPkName())
+        val newFile = FileTools.getBackFile(getPkName(), name)
+        if (!file.exists()) {
+            Snackbar.make(container, "未找到存档文件", Snackbar.LENGTH_LONG)
+                    .setAction("重试", { save.callOnClick() }).show()
+            return
+        }
+        val backFile = FileTools.newBackFile(getPkName())
+        backFile.writeBytes(file.readBytes())
+        file.writeBytes(newFile.readBytes())
+        Snackbar.make(container, "覆盖完成", Snackbar.LENGTH_LONG).show()
     }
 
     private fun hideSoftInput() {
