@@ -1,5 +1,8 @@
 package jero.edit.tabikaeru
 
+import android.text.TextUtils
+import android.util.Log
+
 /**
  * Created by Jero on 2018/2/26 0026.
  */
