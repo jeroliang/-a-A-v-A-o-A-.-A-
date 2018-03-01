@@ -113,6 +113,7 @@ class MainActivity : AppCompatActivity() {
             file.writeBytes(arrayOfByte)
         }
         Snackbar.make(container, "保存完成", Snackbar.LENGTH_LONG).show()
+        history.callOnClick()
     }
 
     private fun writeBackUp() {
@@ -125,6 +126,7 @@ class MainActivity : AppCompatActivity() {
         val backFile = FileTools.newBackFile(getPkName())
         backFile.writeBytes(file.readBytes())
         Snackbar.make(container, "备份完成", Snackbar.LENGTH_LONG).show()
+        history.callOnClick()
     }
 
     private fun showHistory() {
@@ -145,6 +147,7 @@ class MainActivity : AppCompatActivity() {
         backFile.writeBytes(file.readBytes())
         file.writeBytes(newFile.readBytes())
         Snackbar.make(container, "覆盖完成", Snackbar.LENGTH_LONG).show()
+        history.callOnClick()
     }
 
     private fun hideSoftInput() {
