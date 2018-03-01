@@ -119,8 +119,7 @@ class MainActivity : AppCompatActivity() {
     private fun writeBackUp() {
         val file = FileTools.getSaveFile(getPkName())
         if (!file.exists()) {
-            Snackbar.make(container, "未找到存档文件", Snackbar.LENGTH_LONG)
-                    .setAction("重试", { save.callOnClick() }).show()
+            Snackbar.make(container, "未找到存档文件,请切换版本选择", Snackbar.LENGTH_LONG).show()
             return
         }
         val backFile = FileTools.newBackFile(getPkName())
@@ -139,8 +138,7 @@ class MainActivity : AppCompatActivity() {
         val file = FileTools.getSaveFile(getPkName())
         val newFile = FileTools.getBackFile(getPkName(), name)
         if (!file.exists()) {
-            Snackbar.make(container, "未找到存档文件", Snackbar.LENGTH_LONG)
-                    .setAction("重试", { save.callOnClick() }).show()
+            Snackbar.make(container, "未找到存档文件,请切换版本选择", Snackbar.LENGTH_LONG).show()
             return
         }
         val backFile = FileTools.newBackFile(getPkName())
