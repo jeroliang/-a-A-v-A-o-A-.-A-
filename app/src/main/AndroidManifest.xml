@@ -51,6 +51,7 @@
             android:theme="@style/AppTheme.fall" />
         <activity android:name=".layout.coordinator.HomeDemoAct" />
         <activity android:name=".alone.SaveActivity" />
+        <activity android:name=".try_test.TestActivity" />
     </application>
 
 </manifest>
